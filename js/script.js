@@ -32,5 +32,30 @@ confirmButton.addEventListener("click", function(){
    const nameValue = nameField.value.trim();
    const kmsValue = parseInt(kmsField.value);
    const ageValue = ageField.value;
-   console.log(nameValue, kmsValue, ageValue)
+   console.log(nameValue, kmsValue, ageValue);
+
+    // Todo Validazione
+
+    let price = priceKm * kmsValue;
+
+    // ! sconto
+
+    if(ageValue === "under"){
+        rateName = "tariffa Minorenni";
+        price *= 0.8;
+    } else if(ageValue === "over"){
+        rateName = "Tariffa Senior";
+        price *= 0.6;
+    }
+    // numero biglietto e carrozza
+  const car = Math.floor(Math.random() * 10) + 1; 
+  const cp = Math.floor(Math.random() * (10000 - 9000)) + 9000;
+
+//   ! creazione ticket
+
+  costumerElement.innerText = nameValue;
+  rateElement.innerText = rateName;
+  carElement.innerText = car;
+  cpElement.innerText = cp;
+  priceElement.innerText = "€" + price.toFixed(2);
 })
