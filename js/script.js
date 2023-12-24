@@ -35,6 +35,10 @@ confirmButton.addEventListener("click", function(){
    console.log(nameValue, kmsValue, ageValue);
 
     // Todo Validazione
+    if(!nameValue || isNaN(kms) || kms < 1){
+        alert("Inserire un nome valido");
+        return;
+    }
 
     let price = priceKm * kmsValue;
 
@@ -58,4 +62,8 @@ confirmButton.addEventListener("click", function(){
   carElement.innerText = car;
   cpElement.innerText = cp;
   priceElement.innerText = "€" + price.toFixed(2);
+
+//   ! mostriamo il biglietto pronto
+
+  ticketSection.classList.remove("d-none")
 })
