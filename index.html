@@ -14,10 +14,42 @@
 <body>
     <div class="container">
         <!-- ! sezione del form biglietto -->
-        <section id="form" class="m-5"></section>
+        <section id="form" class="m-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Inserisci i tuoi dati</h5>
+                    <hr>
+                    <div class="row row-cols-1 row-cols-3">
+                        <div class="col">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="name" placeholder="Brian">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="kms" class="form-label">Chilometri</label>
+                            <input type="number" class="form-control" id="kms" value="10"> 
+                        </div>
+                        <div class="col">
+                            <label for="age" class="form-label">Fascia di età</label>
+                            <select id="age" class="form-select">
+                                <option selected value="">Adulto</option>
+                                <option value="under">Minorenne</option>
+                                <option value="over">Senior</option>
+                                
+                            </select> 
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer d-flex justify-content-end gap-3">
+                    <div class="btn btn-primary" id="confirm-button">Conferma</div>
+                    <div class="btn btn-secondary" id="reset-button">Annulla</div>
+                </div>
+            </div>
+        </section>
         <!-- ! sezione del biglietto creato -->
 
-    <section id="ticket" class="m-5 d-none"></section>
+    <section id="ticket" class="m-5 "></section>
     </div>
     
 </body>
