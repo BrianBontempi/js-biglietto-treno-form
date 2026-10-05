@@ -70,3 +70,13 @@ confirmButton.addEventListener("click", function(){
 
   ticketSection.classList.remove("d-none")
 })
+
+// ! tasto annulla: riporto i campi al valore originale e nascondo il biglietto
+
+resetButton.addEventListener("click", function(){
+  nameField.value = "";
+  kmsField.value = 10;
+  ageField.value = "";
+
+  ticketSection.classList.add("d-none");
+})
