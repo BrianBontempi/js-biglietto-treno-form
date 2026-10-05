@@ -23,7 +23,6 @@ const priceElement = document.getElementById("total");
 // ! variabili standard
 
 const priceKm = 0.21;
-let rateName = "Tariffa Standard"
 
 // ! event listener
 
@@ -34,13 +33,14 @@ confirmButton.addEventListener("click", function(){
    const ageValue = ageField.value;
    console.log(nameValue, kmsValue, ageValue);
 
-    // Todo Validazione
-    if(!nameValue || isNaN(kms) || kms < 1){
-        alert("Inserire un nome valido");
+    // ! validazione
+    if(!nameValue || isNaN(kmsValue) || kmsValue < 1){
+        alert("Inserire un nome e un numero di km validi");
         return;
     }
 
     let price = priceKm * kmsValue;
+    let rateName = "Tariffa Standard";
 
     // ! sconto
 
@@ -62,6 +62,9 @@ confirmButton.addEventListener("click", function(){
   carElement.innerText = car;
   cpElement.innerText = cp;
   priceElement.innerText = "€" + price.toFixed(2);
+
+//   ! stampo il riepilogo anche in console
+  console.log(`${nameValue} - ${kmsValue} km - ${rateName} - €${price.toFixed(2)}`);
 
 //   ! mostriamo il biglietto pronto
 
